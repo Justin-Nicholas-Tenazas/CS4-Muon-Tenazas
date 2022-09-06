@@ -36,6 +36,12 @@ public class Q1Ex1 {
         
         System.out.println("\nDoes T-A have less health than T-X?");
         if(healthOne < healthThree){System.out.println("Yes.");}
+        System.out.println("How much health does 1 T-X, 5 T-As, and 3 T-Cs have in total?");
+        int healthSum = (healthThree + 5*healthOne + 3*healthTwo);
+        System.out.printf("%d.", healthSum);
+        System.out.println("\nAre T-A and T-X specimens both dangerous?");
+        if(isDangerOne && isDangerThree) {System.out.println("Yes.");}
+        else {System.out.println("No.");}
         
         
     }
