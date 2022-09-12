@@ -30,12 +30,16 @@ public class Q2Ex2 {
                         System.out.println("The number is set! Make your guess!");
                         String guess = sc.nextLine();
                         int trial = Integer.parseInt(guess);
-                        if(random == trial) {
-                            System.out.println("Congratulations! You got it! Play again?");
+                        if(random < trial){System.out.printf("Sorry, guess lower! you have %s guesses left! Go again! \n", guessCount);}
+                        else if(random > trial){System.out.printf("Sorry, guess higher! you have %s guesses left! Go again! \n", guessCount);}
+                        else if(random == trial) {System.out.println("Congratulations! You got it! Play again? y/n");
+                            String confirm = sc.nextLine();
+                            switch(confirm) {
+                                case "y":
+                            }
                         }
                         else{
                             if(guessCount == 0) {System.out.println("You lost... Play again?");}
-                            else{System.out.printf("Sorry, not it! you have %s guesses left! Go again! \n", guessCount);}
                         }
                     }
                     
