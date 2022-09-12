@@ -17,17 +17,41 @@ public class Q2Ex2 {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Welcome to Higher or Lower! What would you want to do? Type in the number of your choice! \n[1] Start playing \n[2] Change game settings \n[3] Quit game");
-        String startup = sc.nextLine();
-        switch(startup) {
-            case "1": break;
+        String startup;
+        int range = 5;
+        int guessCount;
+        do {
+            System.out.println("Welcome to Higher or Lower! What would you want to do? Type in the number of your choice! \n[1] Start playing \n[2] Change game settings \n[3] Quit game");
+            startup = sc.nextLine();
+            switch(startup) {
+                case "1": 
+                    int random = (int) Math.floor(Math.random()*range) + 1;
+                    for(guessCount = 2; guessCount >= 0; guessCount--){
+                        System.out.println("The number is set! Make your guess!");
+                        String guess = sc.nextLine();
+                        int trial = Integer.parseInt(guess);
+                        if(random == trial) {
+                            System.out.println("Congratulations! You got it! Play again?");
+                        }
+                        else{
+                            if(guessCount == 0) {System.out.println("You lost... Play again?");}
+                            else{System.out.printf("Sorry, not it! you have %s guesses left! Go again! \n", guessCount);}
+                        }
+                    }
+                    
+                    break;
             
-            case "2": break;
+                case "2": 
+                    System.out.println("How many guesses would you like to use?");
+                    break;
             
-            case "3": System.out.println("See you next time!");
-            break;
+                case "3": System.out.println("See you next time!");
+                    break;
         
-        }
+            }
+        } 
+        while(!startup.equals("3"));
+        
     }
     
 }
