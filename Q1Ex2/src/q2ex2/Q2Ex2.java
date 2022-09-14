@@ -50,7 +50,7 @@ public class Q2Ex2 {
                                 String reviveHigh = sc.nextLine();
                                 if(reviveHigh == "n") {
                                 System.out.println("See you next time!");
-                                return;
+                                
                                 }
                                 else if (reviveHigh == "y") {break;}
                                 
@@ -61,7 +61,7 @@ public class Q2Ex2 {
                             String confirm = sc.nextLine();
                             if(confirm == "n") {
                                 System.out.println("See you next time!");
-                                return;
+                                
                             }
                             else if (confirm == "y") {break;}
                         }
@@ -73,6 +73,10 @@ public class Q2Ex2 {
                     String newCount = sc.nextLine();
                     guessCount = Integer.parseInt(newCount);
                     guessCount -= 1;
+                    System.out.println("What will be the highest possible number you can guess?");
+                    String newrange = sc.nextLine();
+                    range = Integer.parseInt(newrange);
+                    range -= 1;
                     break;
             
                 case "3": 
